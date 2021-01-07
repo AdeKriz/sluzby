@@ -1,0 +1,45 @@
+.section {
+
+    @media only screen and (min-width: $break-large) {
+        margin-top: 8 * $pad;
+        display: grid;
+       
+        gap: 60px;
+        align-items: center;
+
+        &--agency {
+            grid-template-columns: 550px 430px;
+            grid-auto-flow: dense;
+        }
+
+        &--delegate {
+            grid-template-columns: 430px 550px;
+            grid-auto-flow: dense;
+        }
+
+        &_text--right {
+            grid-column: 2 / span 1;
+        }
+
+        &_text--left {
+            grid-column: 1 / span 1;
+        }
+    }
+
+    @media only screen and (max-width: $break-large) {
+        text-align: center;
+    }
+
+    @media only screen and (min-width: $break-small) and (max-width: $break-large) {
+        margin-top: 8 * $pad;
+
+        &_caption {
+            margin: 0 90px 0 90px;
+        }
+    }
+   
+    @media only screen and (max-width: $break-small) {
+        margin-top: 6 * $pad;
+    }
+
+}

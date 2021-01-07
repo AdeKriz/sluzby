@@ -1,0 +1,114 @@
+.header {
+
+    &_btn {
+        color: $secondary;
+        padding: 11px 30px 11px 30px;
+        border-radius: 20px;
+        width: fit-content;
+        height: 40px;
+        font-size: 14px;
+        font-weight: 400;
+
+        &--dist {
+            background-color: $blue;
+        }
+
+        &--indist {
+            background-color: $primary;
+        }
+    }
+
+    
+    &_title {
+        position: relative;
+        padding-bottom: 16px;
+        margin-top: 4 * $pad;
+        margin-bottom: 3 * $pad;
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            background: $blue;
+            width: 60px;
+            bottom: 0;
+        }
+    }
+
+    &_buttons {
+        display: flex;
+        margin-top: 3 * $pad;
+    }
+
+    @media only screen and (min-width: $break-large) {
+        display: grid;
+        grid-template-columns: repeat(2, 490px);
+        grid-auto-flow: dense;
+        gap: 60px;
+        align-items: center;
+    
+
+        &_img {
+            grid-column: 2 / span 1;
+            max-width: 425px;
+            height: auto;
+            justify-self: center;
+        }
+
+        &_title {
+            &::after {
+               left: 0; 
+            }
+        }
+
+        &_btn--dist {
+            margin-right: 2 * $pad;
+        }
+    
+    }
+
+    @media only screen and (max-width: $break-large) {
+        text-align: center;
+
+        &_img {
+            padding: 0 50px 0 50px;
+            width: 100%;
+            height: auto;
+        }
+
+        &_title {
+            &::after {
+                left: calc(50% - 30px);
+            }
+        }
+    }
+
+    @media only screen and (min-width: $break-small) and (max-width: $break-large) {
+        
+        &_buttons {
+            justify-content: center;
+        }
+
+        &_btn--dist {
+            margin-right: 2 * $pad;
+        }
+
+        &_text {
+            margin: 0 90px 0 90px;       
+        }
+
+    }
+
+    @media only screen and (max-width: $break-small) {
+        &_buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &_btn--dist {
+            margin-bottom: $pad;
+        }
+    }    
+}
+
+

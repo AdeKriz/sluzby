@@ -1,0 +1,58 @@
+.cards {
+    display: grid;
+    
+
+    &_card {background-color: $secondary;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px $shadow-color;
+        font-size: 13px;
+    }
+
+
+   
+
+    @media only screen and (min-width: $break-small) {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2 * $pad;
+        
+
+        &_card {
+            padding: 40px 15px 20px 15px;
+            text-align: center;
+        }
+        
+        &_text {
+            margin-top: 2 * $pad;
+        }
+    }
+
+
+    @media only screen and (min-width: $break-small) and (max-width: $break-large) {
+        
+        margin-top: 4 * $pad;
+        
+    }   
+    
+    @media only screen and (max-width: $break-small) {
+        margin-top: 3 * $pad;
+
+        grid-template-rows: repeat(3, 1fr);
+        row-gap: 15px;
+
+        &_card {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            height: 80px;
+            padding: 2 * $pad;
+            align-items: center;
+        }
+
+        &_text {
+            grid-column: 2 / span 5;
+            justify-self: start;
+            margin: 0 0 0 5px;
+        }
+        
+    }
+}
+
